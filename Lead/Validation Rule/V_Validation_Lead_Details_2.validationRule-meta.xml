@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V_Validation_Lead_Details_2</fullName>
+    <active>true</active>
+    <description>This field is conditionally required when the Lead Source is designated as &quot;Purchased List&quot;</description>
+    <errorConditionFormula>AND (
+ ISPICKVAL(Division__c , &quot;VPS&quot;), ISPICKVAL(LeadSource, &quot;Purchased List&quot;),  Lead_Details__c =&quot;&quot;)</errorConditionFormula>
+    <errorMessage>Lead Details must be entered when &quot;Purchased List&quot; is selected as the Lead Source.</errorMessage>
+</ValidationRule>

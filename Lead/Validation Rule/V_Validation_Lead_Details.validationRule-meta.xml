@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V_Validation_Lead_Details</fullName>
+    <active>true</active>
+    <description>This field is conditionally required when the Lead Source is designated as &quot;Other&quot;</description>
+    <errorConditionFormula>AND ( ISPICKVAL(LeadSource, &quot;Other&quot;),
+ ISPICKVAL(Division__c , &quot;VPS&quot;), Lead_Details__c =&quot;&quot;)</errorConditionFormula>
+    <errorMessage>Lead Details must be filled out when &quot;Other&quot; is selected as the Lead Source.</errorMessage>
+</ValidationRule>

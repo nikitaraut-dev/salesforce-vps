@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_OR_phone_should_be_mandatory_VCS</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISNEW(),
+ISPICKVAL(Division__c , &quot;CS&quot;),
+ISBLANK( Email ),
+ISBLANK( Phone )
+)</errorConditionFormula>
+    <errorMessage>Please Fill Email or Phone.</errorMessage>
+</ValidationRule>

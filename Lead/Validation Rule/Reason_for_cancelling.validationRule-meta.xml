@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_cancelling</fullName>
+    <active>true</active>
+    <description>Values can only be selected against a cancelled status record</description>
+    <errorConditionFormula>AND(
+     ISPICKVAL(Division__c , &quot;VPS&quot;),
+    NOT(ISPICKVAL( Closed_Reason__c , &quot;Cancelled&quot;)),
+    NOT(ISPICKVAL( Reason_for_Cancelling__c , &quot;&quot;)) 
+    )</errorConditionFormula>
+    <errorDisplayField>Reason_for_Cancelling__c</errorDisplayField>
+    <errorMessage>Only select a cancellation reason when lead status is cancelled</errorMessage>
+</ValidationRule>

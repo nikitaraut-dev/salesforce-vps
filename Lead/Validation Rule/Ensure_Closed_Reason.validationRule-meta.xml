@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ensure_Closed_Reason</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Division__c , &quot;VPS&quot;), 
+    ISPICKVAL(Status , &quot;Closed&quot;), 
+    ISPICKVAL(Closed_Reason__c  , &quot;&quot;)
+    )</errorConditionFormula>
+    <errorDisplayField>Status</errorDisplayField>
+    <errorMessage>Ensure that you provide a reason for closing the lead.</errorMessage>
+</ValidationRule>
