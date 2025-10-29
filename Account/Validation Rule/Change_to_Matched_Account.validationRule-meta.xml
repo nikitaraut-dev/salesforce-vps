@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Change_to_Matched_Account</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISPICKVAL(Division__c , &quot;VPS&quot;),
+$Profile.Id &lt;&gt; &apos;00e70000000jMBG&apos;, /*System Administrator*/
+IFS_SFDC_Link_Confirmed__c = TRUE,
+OR(
+ISCHANGED (  AccountNumber  ),
+ISCHANGED ( Credit_Hold__c ),
+ISCHANGED ( Delivery_Terms__c ),
+ISCHANGED ( DUNS__c ),
+ISCHANGED ( VAT_Tax_ID__c ),
+ISCHANGED ( CurrencyIsoCode )))</errorConditionFormula>
+    <errorMessage>This Account is matched with IFS, please contact Sales Support to have the following fields updated; Name, Account Number, Credit Hold, Delivery Terms, DUNS, VAT/TAX ID or Currency ISO.</errorMessage>
+</ValidationRule>
