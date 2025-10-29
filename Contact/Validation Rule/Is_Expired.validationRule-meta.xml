@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Expired</fullName>
+    <active>true</active>
+    <description>Checks that account is not expired before adding a contact</description>
+    <errorConditionFormula>AND( ISPICKVAL(Division__c , &quot;VPS&quot;),ISPICKVAL( Account.Status__c, &quot;Expired&quot;))</errorConditionFormula>
+    <errorMessage>Contacts may not be added to an expired account</errorMessage>
+</ValidationRule>

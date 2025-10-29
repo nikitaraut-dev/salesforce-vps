@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Role_If_Other_please_specify</fullName>
+    <active>true</active>
+    <description>If Other is selected on Role, please specify</description>
+    <errorConditionFormula>AND ( ISPICKVAL(Division__c , &quot;VPS&quot;),
+ISPICKVAL ( Job_Role__c , &quot;Other&quot;), 
+ Role_If_Other_please_specify__c =&quot;&quot;)</errorConditionFormula>
+    <errorMessage>If Role = Other, please specify Role in &quot;Role: If Other please specify&quot; field.</errorMessage>
+</ValidationRule>
